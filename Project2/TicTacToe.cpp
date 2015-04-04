@@ -83,14 +83,14 @@ void TicTacToe::play()
 	int temp; 
 	cout << "Player 1 is:  X\n" << "Player 2 is:  O\n";
 
-	cout << "Please enter position player 1";
+	cout << "Please enter position player 1:  ";
 	cin >> temp;
 	setPosition(temp,1);
 
-	cout << "Please enter position player 1";
+	cout << "Please enter position player 2:  ";
 	cin >> temp;
 	setPosition(temp, 2);
-
+	cout << "\n\n";
 
 
 
@@ -109,17 +109,19 @@ void TicTacToe::setPosition(int k,int player)
 		playerChar = "O";
 	}//else
 
-	if (k < 3)
+	if (k <=3)
 	{
 		arrPos[1][k] = playerChar;
 	}//if
-	else if (k > 3 && k < 6)
+	else if (k > 3 && k <=6)
 	{
-		arrPos[2][k] = playerChar;
+		arrPos[2][k-3] = playerChar;
 	}//elseIf
 	else
 	{
-		arrPos[3][k] = playerChar;
+		arrPos[3][k-6] = playerChar;
 	}//else
+	cout << "\n";
 	print();
+	cout << "\n";
 }
